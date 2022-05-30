@@ -7,6 +7,8 @@ import {
   Link
 } from "react-router-dom";
 import NoMatch from './Components/NoMatch/NoMatch';
+import Login from './Components/Login/Login';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 
 function App() {
@@ -19,6 +21,14 @@ function App() {
 
         <Route path="/home">
           <Home/>
+        </Route>
+
+        <Route path="/login">
+          <Login/>
+        </Route>
+
+        <Route path="/dashboard">
+          <Dashboard/>
         </Route>
 
         <Route path="*">

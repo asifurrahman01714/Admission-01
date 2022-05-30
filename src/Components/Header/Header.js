@@ -12,13 +12,13 @@ export default function Header() {
         <div className="collapse navbar-collapse " id="navbarSupportedContent">
           <ul className="navbar-nav mb-2 mb-lg-0 ms-auto">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Home</a>
+              <a className="nav-link active" aria-current="page" href="/home">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Dashboard</a>
+              <a className="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Login</a>
+              <a className="nav-link active" aria-current="page" href="/login">Login</a>
             </li>
           </ul>
         </div>
