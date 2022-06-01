@@ -10,12 +10,14 @@ import Header from './components/Header/Header';
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
 import { createContext, useState } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
-export const userContext = createContext();
+export const UserContext = createContext();
 function App() {
-const [loggedInUser, setLoggedInUser] = useState({})
+const [loggedInUser, setLoggedInUser] = useState({name:""})
   return (
-    <userContext.Provider value={[loggedInUser, setLoggedInUser]}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <h1>Name: {loggedInUser.name}</h1>
       <Router>
         <Header/>
         <Switch>
@@ -25,15 +27,15 @@ const [loggedInUser, setLoggedInUser] = useState({})
           <Route path="/home">
             <Home />
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard />
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login/>
           </Route>
         </Switch>
       </Router>
-    </userContext.Provider>
+    </UserContext.Provider>
   );
 }
 
