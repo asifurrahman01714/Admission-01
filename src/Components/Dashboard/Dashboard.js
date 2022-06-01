@@ -1,13 +1,7 @@
-import React from 'react';
-import Header from '../Header/Header';
+import React from 'react'
 
-function Dashboard(props) {
-    return (
-        <div>
-            <Header/>
-            <h1>Dashbaord</h1>
-        </div>
-    );
+export default function Dashboard() {
+  return (
+    <div>Dashboard</div>
+  )
 }
-
-export default Dashboard;   

@@ -1,41 +1,39 @@
-import React from 'react';
-import Home from './Components/Home/Home';
+import './App.css';
+import Home from './components/Home/Home';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link
 } from "react-router-dom";
-import NoMatch from './Components/NoMatch/NoMatch';
-import Login from './Components/Login/Login';
-import Dashboard from './Components/Dashboard/Dashboard';
+import Header from './components/Header/Header';
+import Dashboard from './components/Dashboard/Dashboard';
+import Login from './components/Login/Login';
+import { createContext, useState } from 'react';
 
-
+export const userContext = createContext();
 function App() {
+const [loggedInUser, setLoggedInUser] = useState({})
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Home/>
-        </Route>
-
-        <Route path="/home">
-          <Home/>
-        </Route>
-
-        <Route path="/login">
-          <Login/>
-        </Route>
-
-        <Route path="/dashboard">
-          <Dashboard/>
-        </Route>
-
-        <Route path="*">
-            <NoMatch />
-        </Route>
-
-      </Switch>
-    </Router>
+    <userContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <Router>
+        <Header/>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
+          <Route path="/login">
+            <Login/>
+          </Route>
+        </Switch>
+      </Router>
+    </userContext.Provider>
   );
 }
 

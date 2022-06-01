@@ -1,13 +1,7 @@
-import React from 'react';
-import Header from '../Header/Header';
+import React from 'react'
 
-function Login(props) {
-    return (
-        <div>
-            <Header/>
-            <h1>Login</h1>
-        </div>
-    );
+export default function Login() {
+  return (
+    <div>Login</div>
+  )
 }
-
-export default Login;   
