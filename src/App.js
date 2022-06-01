@@ -30,9 +30,11 @@ const [loggedInUser, setLoggedInUser] = useState({name:""})
           <PrivateRoute path="/dashboard">
             <Dashboard />
           </PrivateRoute>
+
           <Route path="/login">
             <Login/>
           </Route>
+          
         </Switch>
       </Router>
     </UserContext.Provider>
