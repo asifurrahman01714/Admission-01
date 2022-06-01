@@ -18,7 +18,8 @@ export default function Login() {
   return (
     <div>
       <div>Login</div>
-      <button onClick={handleCLick}>Click</button>
+      <button onClick={handleCLick}>Sign In</button>
+      <button onClick={()=>{setLoggedInUser({})}}>Sign Out</button>
     </div>
   )
 }
